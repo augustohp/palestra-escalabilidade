@@ -30,6 +30,7 @@ Abaixo o *outline* das idéias e o fluxo da apresentação:
     - Terceira carona, algumas coisas da minha mochila:
         - Métricas são essenciais! (NewRelic, Nagios, Graphite)
         - Conteúdo estático vs Conteúdo dinâmico (em servidores diferentes, plz)
+        - Configure seu servidor web. Por favor. (Apache)
         - Cache HTTP, funciona. (Varnish, Apache)
         - MySQL escala (até no YouTube)! (Confie na replicação, fuja do multi-master)
         - Cache. Funciona! (APC, MemCache, Redis)
