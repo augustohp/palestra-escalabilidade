@@ -1,0 +1,119 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
+    ],
+    "hash": "6583ec2d5230399ff544e8769052256c",
+    "packages": [
+        {
+            "name": "respect/rest",
+            "version": "0.5.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Respect/Rest.git",
+                "reference": "a43b76a178b677a5d7dcfd5690653fb7379d2590"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Respect/Rest/zipball/a43b76a178b677a5d7dcfd5690653fb7379d2590",
+                "reference": "a43b76a178b677a5d7dcfd5690653fb7379d2590",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Respect\\Rest": "library/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD Style"
+            ],
+            "authors": [
+                {
+                    "name": "Henrique Moody",
+                    "email": "henriquemoody@gmail.com",
+                    "homepage": "http://henriquemoody.com/"
+                },
+                {
+                    "name": "Alexandre Gaigalas",
+                    "email": "alexandre@gaigalas.net"
+                },
+                {
+                    "name": "Augusto Pascutti",
+                    "email": "contato@augustopascutti.com"
+                },
+                {
+                    "name": "kleberhs007",
+                    "email": "kleberhs007@yahoo.com"
+                },
+                {
+                    "name": "Leandro",
+                    "email": "lleitep3@gmail.com"
+                },
+                {
+                    "name": "Rogerio Prado de Jesus",
+                    "email": "rogeriopradoj@gmail.com"
+                },
+                {
+                    "name": "Alexandre Gaigalas",
+                    "email": "alexandre@gaiaglas.net"
+                },
+                {
+                    "name": "Anderson Casimiro",
+                    "email": "duodraco@duo.draco"
+                },
+                {
+                    "name": "Anderson Casimiro",
+                    "email": "duodraco@gmail.com"
+                },
+                {
+                    "name": "Augusto Pascutti",
+                    "email": "augusto@phpsp.org.br"
+                },
+                {
+                    "name": "Ben Ramsey",
+                    "email": "ben@benramsey.com"
+                },
+                {
+                    "name": "eduardomarcate",
+                    "email": "eduardo@marcate.info"
+                },
+                {
+                    "name": "Eduardo M. Garcia",
+                    "email": "eduardo@debian.elam"
+                },
+                {
+                    "name": "Nick Rawe",
+                    "email": "nickrawe2@gmail.com"
+                },
+                {
+                    "name": "Pablo Lacerda de Miranda",
+                    "email": "pablolmiranda@gmail.com"
+                },
+                {
+                    "name": "wesleyvicthor",
+                    "email": "w.v.mendes.s@gmail.com"
+                }
+            ],
+            "description": "Thin controller for RESTful applications",
+            "time": "2012-09-16 23:16:41"
+        }
+    ],
+    "packages-dev": [
+
+    ],
+    "aliases": [
+
+    ],
+    "minimum-stability": "stable",
+    "stability-flags": [
+
+    ],
+    "platform": [
+
+    ],
+    "platform-dev": [
+
+    ]
+}

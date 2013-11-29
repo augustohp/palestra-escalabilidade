@@ -1,0 +1,12 @@
+language:
+  php
+
+before_script:
+  "cd tests"
+
+script:
+  "phpunit --testdox"
+
+php:
+  - 5.3
+  - 5.4
