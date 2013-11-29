@@ -1,0 +1,48 @@
+FORGE
+  remote: http://forge.puppetlabs.com
+  specs:
+    example42/apache (2.1.4)
+      example42/puppi (>= 2.0.0)
+    example42/haproxy (2.0.7)
+      example42/puppi (>= 2.0.0)
+    example42/php (2.0.8)
+      example42/puppi (>= 2.0.0)
+    example42/puppi (2.1.7)
+    maxchk/varnish (0.0.2)
+    puppetlabs/apt (1.2.0)
+      puppetlabs/stdlib (>= 2.2.1)
+    puppetlabs/git (0.0.2)
+    puppetlabs/ntp (1.0.1)
+      puppetlabs/stdlib (>= 0.1.6)
+    puppetlabs/stdlib (4.1.0)
+    tPl0ch/composer (0.0.6)
+      puppetlabs/git (= 0.0.2)
+
+GIT
+  remote: https://github.com/hashicorp/puppet-modules.git
+  path: modules/build_essential
+  ref: 1a3cf72d1a54902868b801a4f94e372d0021931f
+  sha: 1a3cf72d1a54902868b801a4f94e372d0021931f
+  specs:
+    build_essential (0.0.1)
+
+GIT
+  remote: https://github.com/ripienaar/puppet-concat.git
+  ref: fe537c0f4f36d4447e156360e71556a48f976996
+  sha: fe537c0f4f36d4447e156360e71556a48f976996
+  specs:
+    puppet-concat (0.2.0)
+
+DEPENDENCIES
+  build_essential (>= 0)
+  example42/apache (>= 0)
+  example42/haproxy (>= 0)
+  example42/php (>= 0)
+  example42/puppi (>= 0)
+  maxchk/varnish (>= 0)
+  puppet-concat (>= 0)
+  puppetlabs/apt (>= 0)
+  puppetlabs/ntp (>= 0)
+  puppetlabs/stdlib (>= 0)
+  tPl0ch/composer (>= 0)
+
