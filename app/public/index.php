@@ -30,7 +30,7 @@ $router->head('/health', function() {
 });
 
 $router->get('/', function() use ($quotes) {
-    header('HTTP/1.1 Get a random quote');
+    header('HTTP/1.1 301 Get a random quote');
     header('Location: /quote/random');
 });
 

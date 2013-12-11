@@ -1,22 +1,23 @@
 import 'shared.pp'
 
-class {'varnish':
-  varnish_listen_port => 80,
-  varnish_storage_size => '10M',
+package { 'varnish':
+    ensure => 'present'
 }
 
-class { 'varnish::vcl':
-  probes => [
-    { name => 'health_check', url => "/health", timeout => "3s", interval => "10s" },
-  ],
-  backends => [
-    { name => 'web1', host => '192.168.42.20', port => '80', probe => 'health_check' },
-    { name => 'web2', host => '192.168.42.21', port => '80', probe => 'health_check' },
-  ],
-  directors => [
-    { name => 'cluster', type => 'round-robin', backends => [ 'web1', 'web2' ] }
-  ],
-  selectors => [
-    { backend => 'cluster' },
-  ],
+file { '/etc/default/varnish':
+    ensure => 'present',
+    source => '/vagrant/puppet/files/etc/default/varnish',
+    require => [Package['varnish']]
+}
+
+file { '/etc/varnish/default.vcl':
+    ensure => 'present',
+    source => '/vagrant/puppet/files/etc/varnish/default.vcl',
+    require => [Package['varnish'], File['/etc/default/varnish']]
+}
+
+service { 'varnish':
+    ensure => 'running',
+    require => [Package['varnish'], File['/etc/default/varnish'], File['/etc/varnish/default.vcl']],
+    subscribe =>[File['/etc/default/varnish'], File['/etc/varnish/default.vcl']]
 }
