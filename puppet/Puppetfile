@@ -1,0 +1,20 @@
+forge "http://forge.puppetlabs.com"
+
+mod "puppetlabs/apt"
+mod "puppetlabs/ntp"
+mod "puppetlabs/stdlib"
+mod "example42/apache"
+mod "example42/puppi"
+mod "example42/php"
+mod "tPl0ch/composer"
+mod "example42/haproxy"
+mod "maxchk/varnish"
+
+mod "build_essential",
+  :git => "https://github.com/hashicorp/puppet-modules.git",
+  :ref => "1a3cf72d1a54902868b801a4f94e372d0021931f",
+  :path => "modules/build_essential"
+
+mod "puppet-concat",
+  :git => "https://github.com/ripienaar/puppet-concat.git",
+  :ref => "fe537c0f4f36d4447e156360e71556a48f976996"
