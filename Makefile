@@ -12,7 +12,7 @@ install-vagrant-plugins:
 	@echo "Installing dependencies with Bindler..."
 	@vagrant plugin bundle
 
-install: clean
+install: clean install-puppet-librarian install-vagrant-plugins
 	cd puppet && librarian-puppet install || echo "You may want to run: make install-puppet-librarian"
 
 .PHONY: clean install-puppet-librarian install

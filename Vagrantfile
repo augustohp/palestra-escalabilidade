@@ -7,6 +7,7 @@ machine_list = [
 ]
 
 Vagrant.configure("2") do |global|
+    #Vagrant.require_version ">= 1.3.5"
     # Configuration for all machines
     puppet_dir = 'puppet'
     tld = 'phpsp.dev'
