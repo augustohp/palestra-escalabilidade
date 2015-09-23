@@ -1,4 +1,4 @@
-.librarian
 .tmp
 .vagrant
-puppet/modules/*
+puppet
+app/html

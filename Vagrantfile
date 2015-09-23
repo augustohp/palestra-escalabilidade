@@ -1,8 +1,8 @@
 machines = [
-    {:host=>"www", :ip=>"192.168.42.2", :ram=>256},
-    {:host=>"cache1", :ip=>"192.168.42.10", :ram=>256},
-    {:host=>"www1", :ip=>"192.168.42.20", :ram=>256},
-    {:host=>"www2", :ip=>"192.168.42.21", :ram=>256}
+    {:host=>"www", :ip=>"192.168.42.2", :ram=>256, :provision=>"null.sh"},
+    {:host=>"cache1", :ip=>"192.168.42.10", :ram=>256, :provision=>"null.sh"},
+    {:host=>"www1", :ip=>"192.168.42.20", :ram=>256, :provision=>"php.sh"},
+    {:host=>"www2", :ip=>"192.168.42.21", :ram=>256, :provision=>"php.sh"}
 ]
 
 Vagrant.configure("2") do |config|
@@ -28,7 +28,8 @@ Vagrant.configure("2") do |config|
     machines.each do |vm|
         config.vm.define vm[:host] do |server|
             hostname = vm[:host] + local_domain
-            server.vm.synced_folder "./app", "/var/www",
+            document_root = "/var/www"
+            server.vm.synced_folder "./app", document_root,
                 owner: "www-data",
                 group: "www-data",
                 id: "vagrant-root",
@@ -43,9 +44,12 @@ Vagrant.configure("2") do |config|
                     "--memory", host_memory.to_s
                 ]
             end
+
             if Vagrant.has_plugin?('vagrant-hostmanager')
                 server.hostmanager.aliases = vm[:host]
             end
+
+            server.vm.provision :shell, path: "usr/bin/provision.sh", args: [vm[:provision], vm[:ip], hostname, document_root+"/public"]
         end
     end
 end
