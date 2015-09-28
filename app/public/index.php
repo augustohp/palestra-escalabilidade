@@ -26,11 +26,13 @@ $quotes = [
 $router = new Respect\Rest\Router;
 
 $router->head('/health', function() {
-    header('HTTP/1.1 200 Everything is fine');
+    header('HTTP/1.1 204 Like you care...');
 });
 
 $router->get('/', function() use ($quotes) {
-    header('HTTP/1.1 301 Get a random quote');
+    header('HTTP/1.1 307 Get a random quote');
+    header('Cache-Control: no-cache, no-store');
+    header('Pragma: no-cache');
     header('Location: /quote/random');
 });
 
@@ -39,9 +41,9 @@ $router->get('/quote/random', function () use ($quotes) {
     $randomQuoteIndex = mt_rand(0, $amountOfQuotes-1);
 
     header('HTTP/1.1 307 Random generator');
-    header('Cache-Control: no-cache');
+    header('Cache-Control: no-cache, no-store');
+    header('Pragma: no-cache');
     header('Location: /quote/index/'.$randomQuoteIndex);
-
 });
 
 $router->get('/quote/index/*', function($index) use ($quotes) {
