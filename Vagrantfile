@@ -1,5 +1,5 @@
 machines = [
-    {:host=>"www", :ip=>"192.168.42.2", :ram=>256, :provision=>"null.sh"},
+    {:host=>"www", :ip=>"192.168.42.2", :ram=>256, :provision=>"haproxy.sh"},
     {:host=>"cache1", :ip=>"192.168.42.10", :ram=>256, :provision=>"null.sh"},
     {:host=>"www1", :ip=>"192.168.42.20", :ram=>256, :provision=>"php.sh"},
     {:host=>"www2", :ip=>"192.168.42.21", :ram=>256, :provision=>"php.sh"}
