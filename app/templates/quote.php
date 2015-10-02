@@ -5,6 +5,7 @@
 <link rel="author" href="Augusto Pascutti" />
 <link rel="stylesheet" type="text/css" href="/style.css" />
 <meta charset="utf-8" />
+<meta http-equiv="refresh" content="5; url=/">
 </head>
 <body>
 <div id="content">
