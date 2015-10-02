@@ -19,7 +19,7 @@ Requisitos (ou as coisas que você deveria ter instalado):
 As VMs são criadas usando [Vagrant][], supondo que você já tenha ele instalado no
 seu sistema:
 
-    $ vagrant plugin install vagrant-hostmaneger
+    $ vagrant plugin install vagrant-hostmanager
     $ vagrant up
 
 Com isso, todas as VMs estarão disponíveis, você pode acessá-las usando http://www.pascutti.localhost
