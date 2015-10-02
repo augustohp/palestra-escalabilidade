@@ -23,6 +23,9 @@ $quotes = [
     "Esse sou eu, cérebro do tamanho de um planeta e você me pede para levá-lo pra ponte de comando. Você chama isso de satisfação profissional? Pois eu não!"
 ];
 
+session_start();
+session_set_cookie_params(10*60, '/', '.pascutti.localhost');
+$userName = (isset($_SESSION['userName'])) ? $_SESSION['userName'] : 'Anonymous';
 $router = new Respect\Rest\Router;
 
 $router->head('/health', function() {
@@ -46,7 +49,7 @@ $router->get('/quote/random', function () use ($quotes) {
     header('Location: /quote/index/'.$randomQuoteIndex);
 });
 
-$router->get('/quote/index/*', function($index) use ($quotes) {
+$router->get('/quote/index/*', function($index) use ($quotes, $userName) {
     if (false === isset($quotes[$index])) {
         header('HTTP/1.1 404 Quote not found');
     }
@@ -58,3 +61,28 @@ $router->get('/quote/index/*', function($index) use ($quotes) {
     header('Cache-Control: public');
     require __DIR__.'/../templates/quote.php';
 });
+
+$router->get('/people/me', function() use ($userName) {
+    return $userName;
+})->accept([
+    'plain/text' => function($data) {
+        return $data . PHP_EOL ;
+    },
+    'text/html' => function($userName) {
+        require __DIR__.'/../templates/identity.php';
+    }
+]);
+
+$router->post('/people/me', function() use ($userName) {
+    $_SESSION['userName'] = $_POST['name'];
+    return $_POST['name'];
+})->when(function() {
+    return isset($_POST['name']);
+})->accept([
+    'text/html' => function() {
+        header('Location: /');
+    },
+    'plain/text' => function($data) {
+        return 'We will remember you as ' . $data . '.' . PHP_EOL;
+    }
+]);

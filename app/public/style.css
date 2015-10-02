@@ -28,12 +28,9 @@ a {
     font-size: 50%;
     color: #ddd;
     text-decoration: none;
-    color: inherit;
+    color: #ddd;
 }
 a:hover {
     text-decoration: underline;
-}
-a:visited {
-    color: #ddd;
 }
 

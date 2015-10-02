@@ -9,7 +9,10 @@
 <body>
 <div id="content">
     <p class="quote"><?=$quote?></p>
-    <a href="/quote/random" alt="Ir para outro quote">E tem outra coisa...</a>
+    <a class="random-quote" href="/quote/random" alt="Ir para outro quote">
+        E tem outra coisa
+        <a class="who" href="/people/me"><?=$userName?> ... </a>
+    </a>
 </div>
 </body>
 </html>
